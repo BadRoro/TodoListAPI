@@ -1,7 +1,6 @@
 package com.learn.todolist.model;
 
 import com.fasterxml.jackson.annotation.*;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -15,8 +14,7 @@ public class TodoList {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String name;
-    @OneToMany (mappedBy = "todoList", cascade = CascadeType.ALL)
-    //@JsonManagedReference
+    @OneToMany (mappedBy = "todoList", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Todo> todos = new ArrayList<>();
     private LocalDateTime creationDate;
 

@@ -1,4 +1,4 @@
-package com.learn.todolist.service;
+package com.learn.todolist.model;
 
 public class TodoInput {
 

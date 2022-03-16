@@ -1,6 +1,7 @@
 package com.learn.todolist.service;
 
 import com.learn.todolist.model.Todo;
+import com.learn.todolist.model.TodoInput;
 import com.learn.todolist.repository.TodoListRepository;
 import com.learn.todolist.repository.TodoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

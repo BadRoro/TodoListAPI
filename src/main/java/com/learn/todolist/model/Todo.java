@@ -1,7 +1,6 @@
 package com.learn.todolist.model;
 
 import com.fasterxml.jackson.annotation.*;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -15,7 +14,6 @@ public class Todo {
     private String label;
     private Boolean done;
     private LocalDateTime creationDate;
-
     @ManyToOne
     //@JsonBackReference
     private TodoList todoList;

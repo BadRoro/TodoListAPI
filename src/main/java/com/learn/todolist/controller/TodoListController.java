@@ -1,6 +1,7 @@
 package com.learn.todolist.controller;
 
 import com.learn.todolist.model.TodoList;
+import com.learn.todolist.model.TodoListInput;
 import com.learn.todolist.service.TodoListService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,14 +38,14 @@ public class TodoListController {
     }
 
     @PostMapping("/todolists")
-    public ResponseEntity<TodoList> createTodoList(@RequestBody TodoList todoList) {
-        TodoList createdTodoList = todoListService.create(todoList);
+    public ResponseEntity<TodoList> createTodoList(@RequestBody TodoListInput input) {
+        TodoList createdTodoList = todoListService.create(input);
         return new ResponseEntity<>(createdTodoList, HttpStatus.OK);
     }
 
     @PutMapping("/todolists/{id}")
-    public ResponseEntity<TodoList> updateTodoListById(@PathVariable("id") long id, @RequestBody TodoList todoList){
-        TodoList updatedTodoList = todoListService.update(id, todoList);
+    public ResponseEntity<TodoList> updateTodoListById(@PathVariable("id") long id, @RequestBody TodoListInput input){
+        TodoList updatedTodoList = todoListService.update(id, input);
         if (updatedTodoList == null)
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 
